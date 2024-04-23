@@ -108,7 +108,7 @@
 		    <version>3.0.2</version>
 		</dependency>
 		
-		<!-- https://www.baeldung.com/checkstyle-java -->
+		<!-- https://www.baeldung.com/checkstyle-java 
 		<reporting>
 		    <plugins>
 		        <plugin>
@@ -120,7 +120,8 @@
 		            </configuration>
 		        </plugin>
 		    </plugins>
-		</reporting>
+		</reporting>		
+		-->
 		
 		<!-- https://mvnrepository.com/artifact/net.sourceforge.pmd/pmd -->
 		<dependency>
@@ -129,11 +130,7 @@
 		    <version>6.55.0</version>
 		    <type>pom</type>
 		</dependency>
-
-		
-		
 	</dependencies>
-
 
 
 
@@ -142,27 +139,34 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-
 				<configuration>
 					<profiles>
 						<profile>dev</profile>
 					</profiles>
-				</configuration>
-
-			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
-					</excludes>
+					</excludes>					
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 
+
+<!-- https://www.baeldung.com/checkstyle-java -->
+<reporting>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+                <configLocation>checkstyle.xml</configLocation>
+            </configuration>
+        </plugin>
+    </plugins>
+</reporting>
+	
 </project>
