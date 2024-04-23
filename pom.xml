@@ -155,7 +155,7 @@
 	</build>
 
 
-<!-- https://www.baeldung.com/checkstyle-java -->
+<!-- https://www.baeldung.com/checkstyle-java -->
 <reporting>
     <plugins>
         <plugin>
