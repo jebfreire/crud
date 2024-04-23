@@ -1,0 +1,61 @@
+#Perfil destinado a uso da aplicacao (localhost) com opcao de seguranca ativado
+
+application-version: $project.version$
+
+server:
+  port: 8080
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/Test
+    username: postgres
+    password: postgres
+#    maxActive: 50
+#    maxIdle: 20
+#    maxWait: 10000
+#    testOnBorrow: true
+#    validationQuery: SELECT 1
+
+#  liquibase:
+#    enabled: false
+#    change-log: db/changelog-master.yaml
+#    liquibase-schema: public
+#
+#  activemq:
+#    broker-url: tcp://127.0.0.1:61616
+#    user: admin
+#    password: admin
+
+
+  #  pattern:
+  #    console: %d{yyyy-MM-dd HH:mm:ss} - %msg%n
+  #    file: %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+#  level:
+#    root: error
+#    com.edu.plant: debug
+#    org.hibernate: trace
+#
+#neuron:
+#  api:
+#    broker:
+#      queue: neuron.api
+#  jwt:
+#    secret: ZNZuJsXZyWptselpwBmwDKWh2FgEsqSBV2dMI7hCu3QH8MsLduEF5TW7Sv4Yf51v
+#    expiration-ms: 86400000 #24 horas
+#  holon:
+#    broker:
+#      queue:
+#        default: holon.neuron-entity
+#        registration: holon.neuron-distribution-entity
+#        alarms: holon.neuron-alarms-entity
+#        events: holon.neuron-events-entity
